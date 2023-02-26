@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body %}
+  <body>
+
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Тут можно просмотреть все товары, изменить или удалить их, добавить новые</h1>
+    </div>
+    <br>
+    <div class="container">
+      <a href="{{url_for('add_item')}}" type="button" class="btn btn-lg btn-block btn-dark">Добавить товар</a>
+    </div>
+    <br>
+    <div class="container">
+      {% for item in items %}
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">{{item.title}}</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{item.price}}<small class="text-muted"></small></h1>
+            <p>{{item.description}}</p>
+            <h6>{{item.in_stock}} - в наличии</h6>
+            <a href="{{url_for('edit', id=item.id)}}" type="button" class="btn btn-sm btn-outline-secondary">Изменить</a>
+            <a href="{{url_for('delete', id=item.id)}}" type="button" class="btn btn-sm btn-outline-secondary">Удалить</a>
+          </div>
+        </div>
+       {% endfor %}
+          </div>
+{% endblock %}
+    </body>

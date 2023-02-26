@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <h3>Добавление/редактирование товара</h3>
+            <br>
+            <div class="card">
+                <h5 class="text-center mb-4">Все поля должны быть заполнены, пустыми не оставлять, хуйню не писать!</h5>
+                <form method="post" class="form-card">
+                    <strong>{{form.title.label}}</strong>
+                        <br>Название в формате - "Подарочный набор HAPPY BIRTHDAY", "Подарочный набор BODY" и т.д.
+                        <br>{{form.title()}}<br><br>
+                    <strong>{{form.description.label}}</strong>
+                        <br>Описание в формате - "массажная щётка;масло-гель для душа;соль для ванны"
+                    <br>Каждая позиция состава бокса через ; без пробелов
+                        <br>{{form.description()}}<br><br>
+                    <strong>{{form.photo_url.label}}</strong>
+                    <br>Ссылка на фоторграфию в гугл-диске, обязательно должен быть открыт доступ к диску
+                    <br>{{form.photo_url()}}<br><br>
+                    <strong>{{form.price.label}}</strong>
+                    <br>Цена в числовом формате без дополнительных символов - 1000, 1450 и т.д.
+                    <br>{{form.price()}}<br><br>
+                    <strong>{{form.weight.label}}</strong>
+                    <br>Вес товара в формате - 2.5, 3, 4.5 - обязательно точка, если не целое число, без приставок<br>
+                    "кг", "гр" и т.д., все измеряется в килограммах
+                    <br>{{form.weight()}}<br><br>
+                    <strong>{{form.size.label}}</strong>
+                    <br>Размер коробки в сантиметрах - длина*ширина*высота, обязательно через знак *
+                    <br>{{form.size()}}<br><br>
+                    <strong>{{form.in_stock.label}}</strong>
+                    <br>Количество товара в наличии
+                    <br>{{form.in_stock()}}<br><br>
+                    {{form.submit()}}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

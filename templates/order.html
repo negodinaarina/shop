@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <table class="table">
+        <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Номер</th>
+      <th scope="col">Имя</th>
+      <th scope="col">Фамилия</th>
+      <th scope="col">Email</th>
+      <th scope="col">Дата оформления</th>
+      <th scope="col">Сумма</th>
+      <th scope="col">Статус</th>
+    </tr>
+  </thead>
+        <tbody>
+        <tr>
+            <th scope="row">{{order.id}}</th>
+            <td>{{order.reference}}</td>
+            <td>{{order.first_name}}</td>
+            <td>{{order.last_name}}</td>
+            <td>{{order.email}}</td>
+            <td>{{order.date}}</td>
+            <td>{{order.total_sum}}</td>
+            <td><form method="post">
+                {{form.status.label}}
+                {{form.status()}}
+                {{form.submit()}}
+            </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <h3 class="text-heading">Состав заказа:</h3>
+    {% for item in items %}
+    <h4 class="text-regular">{{item[0].title}}</h4>
+    <h5 class="text-regular">Количество - {{item[1]}}</h5>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block body%}
+ <body><br><br>
+ <div class="text-center"><h1 class="h3 mb-3 font-weight-normal text-headers">Оформление</h1></div>
+<br>
+ <section class="h-100 h-custom">
+        <div class="container h-100 py-5">
+    <div class="row d-flex h-100">
+      <div class="col">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" class="text-headers h5">Наименование</th>
+                <th scope="col" class="text-headers h5">Количество</th>
+                <th scope="col" class="text-headers h5">Цена</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for product in products %}
+              <tr>
+                <th scope="row">
+                  <div class="d-flex">
+                    <div class="flex-column ms-4">
+                      <h5 class="mb-2 text-regular">{{product['title']}}</h5>
+                    </div>
+                  </div>
+                </th>
+                <td>
+                  <div class="d-flex flex-row">
+                    <p class="text-regular" style="width: 50px; height:50px;"> {{product['quantity']}}</p>
+                  </div>
+                </td>
+                <td >
+                  <p class="mb-0 text-headers" style="font-weight: 500;">{{product['total']}}</p>
+                </td>
+              </tr>
+             {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+        </div>
+ </section>
+        <div class="container">
+        <h5 class="h5 font-weight-normal text-regular">Количество позиций - {{quantity}}</h5>
+            <h5 class="h5 font-weight-normal text-regular">Сумма - {{total}} рублей</h5><br><br>
+ <div class="text-center">
+          <form class="form-checkout" method="post">
+        <div><h4 class="text-regular">{{ form.first_name.label}}</h4> {{form.first_name}}</div><br>
+        <div><h4 class="text-regular">{{ form.last_name.label}}</h4> {{form.last_name}}</div><br>
+        <div><h4 class="text-regular">{{ form.email.label}}</h4> {{form.email}}</div><br>
+      <button type="submit" class="btn btn-catalog">Оплатить</button>
+    </form>
+ </div>
+            </div>
+ </body>
+{% endblock %}

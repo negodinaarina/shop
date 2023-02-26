@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+  <body class="text-center">
+    <form class="form-signin" method="post">
+      <h1 class="h3 mb-3 font-weight-normal">Вход</h1>
+      {% if error%}
+      <h3 class="h3 mb-3 font-weight-normal"><small>{{error}}</small></h3>
+      {% endif %}
+      <div>{{form.username.label}}<br>{{form.username}}</div>
+      <div>{{form.password.label}}<br>{{form.password}}</div><br>
+      <div>{{form.submit}}</div>
+    </form>
+  </body>
+{% endblock %}

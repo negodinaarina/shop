@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block body %}
+  <body>
+    <main role="main">
+      <section class="text-center">
+        <div class="container">
+          <br><br><br>
+          <h1 class="text-headers">Каталог типа</h1>
+          <p class="lead text-muted text-regular">Тут что-то написать наверное</p>
+          <br>
+        </div>
+      </section>
+      <div class="album py-5" styles="background-color: #f5f4f2">
+        <div class="container">
+          <div class="row">
+            {% for item in items %}
+            <div class="col-md-6">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" width=500px height=auto src='{{item.photo_url}}' alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="text-headers">{{item.title}}</h5>
+                  <br>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="{{url_for('product', id=item.id)}}" type="button" class="btn btn-sm btn-outline-secondary btn-catalog">Подробнее</a>
+                    </div>
+                    <small class="text-muted">{{item.price}} р.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </main>
+{% endblock %}

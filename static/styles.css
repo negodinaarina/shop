@@ -1,0 +1,144 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+
+/*.card{
+    padding: 20px;
+    border-color: #EE6965;
+    background-color: #f5f4f2;
+}
+*/
+
+.btn-catalog{
+    font-weight: 600;
+    color: #EE6965;
+    background-color: #ffffff;
+    border-color: #EE6965;
+    padding: 10px 16px;
+}
+
+.link-regular:active,
+.link-regular:hover,
+.link-regular{
+    text-decoration: none;
+}
+
+.link-regular:hover{
+    color: #EE6965;
+}
+
+.btn-syka{
+    background-color: #f5f4f2;
+}
+
+.btn-catalog:hover{
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #EE6965;
+    border-color: #EE6965;
+   }
+
+.text-regular{
+    font-family: 'Raleway', Arial, sans-serif;
+    font-weight: 300;
+    color: #808080;
+
+}
+
+.text-headers{
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 400;
+    color: #585858;
+    text-transform: uppercase;
+}
+
+.snip1143 {
+  font-family: 'Raleway', Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.snip1143 * {
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+
+}
+.snip1143 li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0 1.5em;
+  overflow: hidden;
+  color: #EE6965;
+}
+.snip1143 a {
+  color: #EE6965;
+  padding: 0.3em 0;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 1px;
+  margin: 0;
+  text-decoration: none;
+}
+.snip1143 a:before,
+.snip1143 a:after {
+  position: absolute;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.snip1143 a:before {
+  top: 100%;
+  display: block;
+  height: 3px;
+  width: 100%;
+  content: "";
+  background-color: #c0392b;
+}
+.snip1143 a:after {
+  padding: 0.3em 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  content: attr(data-hover);
+  color: #8F1411;
+  white-space: nowrap;
+}
+.snip1143 li:hover a,
+.snip1143 .current a {
+  transform: translateY(-100%);
+}
+
+.ul-product {list-style: none}
+
+.li-product ::before {
+content: "•";
+color: #EE8C8A ;
+display: inline-block;
+width: 1em;
+margin-left: -1em
+}
+
+.main-heading{
+      position: relative;
+  }
+.main-heading::before {
+      background-color: #EE6965;
+      opacity:40%;
+      content: "";
+      position: absolute;
+      width: calc(90%);
+      height: 50%;
+      right: -40px;
+      left:-10px;
+      bottom: 0;
+      z-index: -1;
+      transform: rotate(-2deg);
+  }
+
+.in-between-text{
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: #EE6965;
+}
+
+.form_popa{
+    border: none;
+}
