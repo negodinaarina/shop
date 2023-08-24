@@ -5,4 +5,4 @@ RUN pip3 install -r /requirements.txt
 COPY . /main
 WORKDIR /main
 EXPOSE 8080
-CMD ["gunicorn","--config", "gunicorn_config.py", "main.py"]
+CMD ["gunicorn","--config", "gunicorn_config.py", "main:application"]
